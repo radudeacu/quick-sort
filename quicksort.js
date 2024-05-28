@@ -13,12 +13,15 @@ function quickSort(arr) {
     let pivot = arr[arr.length -1];
     let left = [];
     let right = [];
+    console.log("pivot " + " " + pivot);
 
     for (let i = 0; i < arr.length -1; i++) {
         if (arr[i] < pivot) {
             left.push(arr[i])
+            console.log("left: " + " " + left);
         } else {
             right.push(arr[i])
+            console.log("right" + " " + right);
         }
     }
     return [...quickSort(left), pivot, ...quickSort(right)]
@@ -27,3 +30,6 @@ function quickSort(arr) {
 
 const arr = [8, 20, -2, 4, -6];
 console.log(quickSort(arr)); // [-6, -2, 4, 8, 20]
+
+const arr2 = [7, 6, 5, 4, 3, 2, 1]
+console.log(quickSort(arr2));
